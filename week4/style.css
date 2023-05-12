@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.scoreBox {
+    display: flex;
+}
+.outputBox {
+    display: flex;
+}
+div {
+    margin-right: 50px;
+}
+button {
+    margin-right: 15px;
+    width: 75px;
+}
+
+#results {
+    margin-bottom: 25px;
+}
