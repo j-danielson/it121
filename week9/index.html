@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html>
+
+<head>   
+
+         <title>Complete JavaScript Course</title>
+
+</head>
+
+<body>   
+
+        <textarea name="txtarea" id="textarea1" rows=2 cols=50></textarea> <button>Get Emails</button>   
+
+        <textarea name="txtarea2" id="textarea2" rows=2 cols=50></textarea>   
+        <p id="test"></p>
+
+<script>
+    var text1 = document.getElementById("textarea1");
+    var text2 = document.getElementById("textarea2");
+    var button = document.getElementsByTagName("button");
+
+    button[0].addEventListener("click", lookUp);
+
+    function lookUp() {
+        console.log('lookup function');
+        var rawTxt = text1.value;
+        console.log(rawTxt);
+        // var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        // rawTxt.matchAll(re).forEach(function(email) {
+        // console.log(email);
+        // });
+        var eData = rawTxt.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+        var holder = [];
+        eData.forEach(email => {
+            if (!holder.includes(email)) {
+                holder.push(email);
+            }
+        });
+        text2.innerHTML = holder.toString();
+    }
+
+
+
+// Find the first button element in the document and attach a click event listener to it, calling the 'lookUp' function when clicked.
+
+// Declare a function named 'lookUp'. 
+
+ // Get the value of the 'firstArea' text area and store it in the 'rawTxt' variable.
+
+// Use a regular expression to match and extract email addresses from the 'rawTxt' string, and store them in the 'eData' variable. 
+
+// Create an empty array named 'holder' to store unique email addresses. 
+
+// Iterate through each element in the 'eData' array.
+
+// Check if the current email address is not already present in the 'holder' array.
+
+// Add the current email address to the 'holder' array.
+
+</script>
+
+</body>
+
+</html>

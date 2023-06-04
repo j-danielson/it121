@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<title>Chapter_7 Assignment</title>
+
+</head>
+
+<body>
+
+<img id="1" src="images/usa.png" onclick="changeImg(this.id)" />
+
+<img id="2" src="images/mexico.png" onclick="changeImg(this.id)" />
+
+<script>
+
+const pictures = ["usa.png", "jamaica.png", "mexico.png", "canada.png"];
+
+function changeImg(id) {
+ var imgNo = Math.floor(Math.random() * 3);
+ var newImg = "images/" + pictures[imgNo];
+ var imgSrc = document.getElementById(id).src;
+ if (newImg === imgSrc) {
+    changeImg(id);
+ } else {
+    document.getElementById(id).src = newImg;
+ }
+  
+}
+/*declare and define an image of [ "usa.jpg", 
+
+"canada.jpg", "jamaica.gif", "mexico.jpg"
+
+];
+
+identify the Flag of the county you wish to save the image.jpg , upload to your folder 
+
+*/
+
+//The output of this code will not be visible to the user as it is a client-side script written in JavaScript to change the image displayed on the webpage.
+
+//When the user clicks on an image, the changeImg function will be triggered and will randomly select a new image from the myImages array and set the src attribute of the clicked image to the new image.
+
+//The user will see the new image displayed on the webpage without the need for a page reload.
+
+</script>
+
+</body>
+
+</html>
