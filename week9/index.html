@@ -30,8 +30,9 @@
         // rawTxt.matchAll(re).forEach(function(email) {
         // console.log(email);
         // });
-        var eData = rawTxt.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+        var eData = rawTxt.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-a-zA-Z0-9._-]+)/gi);
         var holder = [];
+        console.log(holder);
         eData.forEach(email => {
             if (!holder.includes(email)) {
                 holder.push(email);
